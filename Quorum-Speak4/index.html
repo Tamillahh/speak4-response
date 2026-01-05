@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quorum vs. Speak4: Our Response | Speak4</title>
+    <meta name="description" content="Quorum just wrote about Speak4. Here's our response—and what they're not telling you about conversion rates.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Pontanello';
+            src: local('Pontanello');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.5;
+            color: #1f2937;
+            background: #fafafa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: #00f6b3;
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .logo-img {
+            height: 24px;
+            width: auto;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .menu-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #001744;
+            margin: 5px 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: #00f6b3;
+            color: #001744;
+            padding: 60px 0 60px 0;
+        }
+
+        .hero h1 {
+            font-family: 'Pontanello', 'Inter', sans-serif;
+            font-size: 48px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero .tagline {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 40px;
+            max-width: 800px;
+            line-height: 1.6;
+        }
+
+        .hero-form {
+            display: flex;
+            gap: 20px;
+            max-width: 900px;
+            flex-wrap: wrap;
+        }
+
+        .form-input {
+            flex: 1;
+            min-width: 250px;
+            padding: 18px 24px;
+            border: 2px solid #001744;
+            border-radius: 8px;
+            background: #00f6b3;
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            color: #001744;
+        }
+
+        .form-input::placeholder {
+            color: #001744;
+            opacity: 0.7;
+        }
+
+        .btn-primary {
+            background: #001744;
+            color: #00f6b3;
+            padding: 18px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,23,68,0.3);
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-alt {
+            background: #f9fafb;
+        }
+
+        .section-title {
+            font-family: 'Pontanello', 'Inter', sans-serif;
+            font-size: 48px;
+            font-weight: 400;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #001744;
+        }
+
+        /* Claims Section */
+        .claim-card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 4px solid #00f6b3;
+        }
+
+        .claim-label {
+            font-size: 14px;
+            font-weight: 700;
+            color: #6b7280;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .claim-quote {
+            font-size: 18px;
+            font-style: italic;
+            color: #4b5563;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #f3f4f6;
+            border-radius: 8px;
+        }
+
+        .claim-truth {
+            margin-top: 20px;
+        }
+
+        .claim-truth h3 {
+            font-size: 20px;
+            color: #001744;
+            margin-bottom: 15px;
+        }
+
+        .results-box {
+            background: #f0f9ff;
+            border: 2px solid #001744;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .results-box strong {
+            color: #001744;
+            font-size: 24px;
+        }
+
+        /* Comparison Visual */
+        .comparison-visual {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .bar-comparison {
+            margin: 30px 0;
+        }
+
+        .bar-item {
+            margin: 20px 0;
+        }
+
+        .bar-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .bar-track {
+            background: #e5e7eb;
+            height: 40px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00f6b3 0%, #00d9a0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 15px;
+            color: white;
+            font-weight: 700;
+            transition: width 1s ease-out;
+        }
+
+        .bar-fill.quorum {
+            background: linear-gradient(90deg, #dc2626 0%, #b91c1c 100%);
+        }
+
+        /* Calculator */
+        .calculator {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .calculator-inputs {
+            display: grid;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1f2937;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #00f6b3;
+        }
+
+        .calculate-btn {
+            width: 100%;
+            padding: 16px;
+            background: #001744;
+            color: #00f6b3;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .calculate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,23,68,0.2);
+        }
+
+        .results {
+            margin-top: 40px;
+            padding: 30px;
+            background: #e6fdf8;
+            border-radius: 12px;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .results.show {
+            opacity: 1;
+            max-height: 500px;
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #d1fae5;
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-label {
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .result-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: #001744;
+        }
+
+        /* Side by Side */
+        .side-by-side {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .side-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .side-card h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #1f2937;
+        }
+
+        .side-card.quorum {
+            border: 2px solid #dc2626;
+        }
+
+        .side-card.speak4 {
+            border: 2px solid #00f6b3;
+        }
+
+        .side-card ul {
+            list-style: none;
+        }
+
+        .side-card li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .side-card li:before {
+            content: "→ ";
+            color: #6b7280;
+            font-weight: bold;
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background: #f9fafb;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .comparison-table tr {
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .comparison-table .check {
+            color: #001744;
+            font-weight: 600;
+        }
+
+        .comparison-table .stars {
+            color: #fbbf24;
+        }
+
+        /* Testimonials Carousel */
+        .testimonial-carousel {
+            position: relative;
+            max-width: 1000px;
+            margin: 40px auto;
+            overflow: hidden;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .testimonial {
+            min-width: 100%;
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 4px solid #00f6b3;
+        }
+
+        .testimonial-quote {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #4b5563;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 4px;
+        }
+
+        .testimonial-org {
+            color: #6b7280;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .testimonial-category {
+            color: #001744;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-top: 12px;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .carousel-btn {
+            background: #001744;
+            color: #00f6b3;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .carousel-btn:hover {
+            transform: scale(1.1);
+            background: #002a66;
+        }
+
+        .carousel-dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #d1d5db;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .carousel-dot.active {
+            background: #00f6b3;
+            width: 24px;
+            border-radius: 5px;
+        }
+
+        /* Venn Diagram */
+        .venn-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin: 60px 0;
+            flex-wrap: wrap;
+        }
+
+        .venn-circle {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            width: 300px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .venn-quorum {
+            border: 3px solid #dc2626;
+        }
+
+        .venn-speak4 {
+            border: 3px solid #00f6b3;
+        }
+
+        .venn-circle h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .venn-circle ul {
+            list-style: none;
+        }
+
+        .venn-circle li {
+            padding: 8px 0;
+            color: #4b5563;
+        }
+
+        /* CTA Grid */
+        .cta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .cta-card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+            border: 2px solid #00f6b3;
+        }
+
+        .cta-card h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #001744;
+        }
+
+        .cta-card ul {
+            list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .cta-card li {
+            padding: 8px 0;
+            color: #4b5563;
+        }
+
+        .cta-card li:before {
+            content: "✓ ";
+            color: #00f6b3;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        .footer {
+            background: #001744;
+            color: white;
+            padding: 60px 0 30px 0;
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #00f6b3;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.8;
+        }
+
+        .footer-disclaimer {
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(0,246,179,0.1);
+            border-radius: 8px;
+            font-size: 14px;
+            color: #9ca3af;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero .tagline {
+                font-size: 16px;
+            }
+
+            .side-by-side {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-form {
+                flex-direction: column;
+            }
+
+            .form-input {
+                min-width: 100%;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="https://speak4.co">
+                    <img src="Images/speak4logo.png" alt="Speak4" class="logo-img">
+                </a>
+                <nav class="header-nav">
+                    <button class="menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Keep Quorum for Tracking.<br>Switch to Speak4 for Advocacy.</h1>
+            <p class="tagline">When your competitor writes 2,000 words defending their all-in-one platform, they're telling you something: specialists are winning at advocacy conversion. Here's why you don't have to choose.</p>
+            
+            <div class="hero-form">
+                <a href="#demo" class="btn-primary">See the Conversion Difference</a>
+                <a href="#calculator" class="btn-primary" style="margin-left: 20px;">Calculate Your Impact</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 1: The One Claim That Matters -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">The One Claim That Matters</h2>
+            
+            <div class="claim-card">
+                <div class="claim-label">Quorum says</div>
+                <div class="claim-quote">
+                    "Speak4 has no stakeholder CRM, no connection to legislative tracking..."
+                </div>
+                <div class="claim-truth">
+                    <h3>Our response: You're right. And you should keep using yours.</h3>
+                    <p style="font-size: 18px; line-height: 1.8; color: #1f2937; margin-bottom: 30px;">
+                        Here's what we tell every prospect:
+                    </p>
+                    
+                    <div class="side-by-side">
+                        <div>
+                            <h4 style="font-size: 20px; margin-bottom: 15px; color: #001744;">Keep Quorum For:</h4>
+                            <ul style="list-style: none; color: #4b5563;">
+                                <li style="padding: 8px 0;">✓ Legislative tracking (genuinely best in class)</li>
+                                <li style="padding: 8px 0;">✓ Stakeholder CRM (excellent features)</li>
+                                <li style="padding: 8px 0;">✓ Committee monitoring (comprehensive)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 20px; margin-bottom: 15px; color: #001744;">Switch to Speak4 For:</h4>
+                            <ul style="list-style: none; color: #4b5563;">
+                                <li style="padding: 8px 0;">✓ Advocacy conversion (customers report 35-45% vs. industry's 3-7%)</li>
+                                <li style="padding: 8px 0;">✓ Mobile completion (68% finish on phones)</li>
+                                <li style="padding: 8px 0;">✓ Speed (20-second actions, 10-minute setup)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 40px; padding: 30px; background: #f0f9ff; border-radius: 12px;">
+                        <p style="font-size: 20px; font-weight: 600; color: #001744;">
+                            The difference:<br>
+                            Quorum does twelve things well.<br>
+                            We do one thing exceptionally.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial" style="margin-top: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <div class="testimonial-quote">
+                    "Speak4 is the advocacy tool you've been looking for. It has everything that makes converting audiences to advocates that our firm could want without all of the extra things that make other tools expensive and ineffective."
+                </div>
+                <div class="testimonial-author">Shelley Courington</div>
+                <div class="testimonial-org">Evergreen Advocacy Solutions</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: The Friday 4PM Test -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">The Friday 4PM Test</h2>
+            
+            <p style="text-align: center; font-size: 20px; margin-bottom: 40px; color: #1f2937; font-weight: 600;">
+                Scenario: Bill drops. You need constituent pressure by Monday's vote.
+            </p>
+
+            <div class="comparison-visual">
+                <div class="side-by-side">
+                    <div style="background: #fef2f2; padding: 30px; border-radius: 12px; border: 2px solid #dc2626;">
+                        <h3 style="color: #dc2626; margin-bottom: 20px;">Your current setup (5% conversion):</h3>
+                        <p style="font-size: 18px; color: #1f2937; margin-bottom: 10px;">10,000 emails → <strong>500 actions</strong></p>
+                        <p style="color: #6b7280;">Legislators feel comfortable ignoring</p>
+                    </div>
+                    <div style="background: #f0fdf4; padding: 30px; border-radius: 12px; border: 2px solid #00f6b3;">
+                        <h3 style="color: #059669; margin-bottom: 20px;">With specialist advocacy (45% conversion):</h3>
+                        <p style="font-size: 18px; color: #1f2937; margin-bottom: 10px;">10,000 emails → <strong>4,500 actions</strong></p>
+                        <p style="color: #6b7280;">Legislators feel constituent pressure</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 40px; padding: 30px; background: white; border-radius: 12px;">
+                    <p style="font-size: 24px; font-weight: 700; color: #001744; margin-bottom: 10px;">Gap: 4,000 voices</p>
+                    <p style="font-size: 18px; color: #4b5563;">In close votes decided by 3-8 legislators, that gap matters.</p>
+                </div>
+            </div>
+
+            <!-- The Support Gap -->
+            <div style="margin-top: 60px;">
+                <h3 style="font-size: 32px; text-align: center; color: #001744; margin-bottom: 30px; font-weight: 700;">The Support Gap</h3>
+                <p style="text-align: center; font-size: 20px; margin-bottom: 40px; color: #4b5563; font-weight: 600;">
+                    When you hit a problem at 4:47 PM on Friday...
+                </p>
+
+                <div class="comparison-visual">
+                    <div class="side-by-side">
+                        <div style="background: #fef2f2; padding: 35px; border-radius: 12px; border: 2px solid #dc2626;">
+                            <h4 style="color: #dc2626; margin-bottom: 20px; font-size: 22px; font-weight: 700;">Generalist Platform</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="padding: 12px 0; border-bottom: 1px solid #fecaca; font-size: 16px; color: #1f2937;">
+                                    <span style="color: #dc2626; font-weight: 700; margin-right: 8px;">❌</span> Submit a ticket
+                                </li>
+                                <li style="padding: 12px 0; border-bottom: 1px solid #fecaca; font-size: 16px; color: #1f2937;">
+                                    <span style="color: #dc2626; font-weight: 700; margin-right: 8px;">❌</span> Wait 24-48 hours for response
+                                </li>
+                                <li style="padding: 12px 0; border-bottom: 1px solid #fecaca; font-size: 16px; color: #1f2937;">
+                                    <span style="color: #dc2626; font-weight: 700; margin-right: 8px;">❌</span> "We'll escalate to engineering on Monday"
+                                </li>
+                                <li style="padding: 12px 0; font-size: 16px; color: #1f2937;">
+                                    <span style="color: #dc2626; font-weight: 700; margin-right: 8px;">❌</span> Your campaign sits broken over the weekend
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div style="background: #f0fdf4; padding: 35px; border-radius: 12px; border: 2px solid #00f6b3;">
+                            <h4 style="color: #059669; margin-bottom: 20px; font-size: 22px; font-weight: 700;">Specialist Platform</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="padding: 12px 0; border-bottom: 1px solid #bbf7d0; font-size: 16px; color: #1f2937;">
+                                    <span style="color: #059669; font-weight: 700; margin-right: 8px;">✓</span> Direct message to support
+                                </li>
+                                <li style="padding: 12px 0; border-bottom: 1px solid #bbf7d0; font-size: 16px; color: #1f2937;">
+                                    <span style="color: #059669; font-weight: 700; margin-right: 8px;">✓</span> Same-day response (usually within 2 hours)
+                                </li>
+                                <li style="padding: 12px 0; border-bottom: 1px solid #bbf7d0; font-size: 16px; color: #1f2937;">
+                                    <span style="color: #059669; font-weight: 700; margin-right: 8px;">✓</span> "Let me fix that for you now"
+                                </li>
+                                <li style="padding: 12px 0; font-size: 16px; color: #1f2937;">
+                                    <span style="color: #059669; font-weight: 700; margin-right: 8px;">✓</span> Campaign live before you leave the office
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 40px; padding: 35px; background: linear-gradient(135deg, #001744 0%, #003d82 100%); border-radius: 12px; color: white;">
+                    <p style="font-size: 22px; font-weight: 700; margin-bottom: 15px;">Bills don't wait for business hours.</p>
+                    <p style="font-size: 18px; opacity: 0.95;">Neither should your support team.</p>
+                </div>
+            </div>
+
+            <div class="testimonial" style="margin-top: 50px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <div class="testimonial-quote">
+                    "The nature of working during a legislative session is that things can change extremely fast, and our campaigns need to be adjusted very quickly. When I have a problem, I need action right away."
+                </div>
+                <div class="testimonial-author">Taylor Dawson Justice</div>
+                <div class="testimonial-org">Beacon Center of Tennessee</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Calculator -->
+    <section id="calculator" class="section">
+        <div class="container">
+            <h2 class="section-title">Calculate Your Conversion Gap</h2>
+
+            <div class="calculator">
+                <div class="calculator-inputs">
+                    <div class="input-group">
+                        <label for="listSize">Your email list size</label>
+                        <input type="number" id="listSize" value="10000" min="100">
+                    </div>
+                    <div class="input-group">
+                        <label for="currentRate">Current conversion (or "don't know") (%)</label>
+                        <input type="number" id="currentRate" value="5" min="1" max="100">
+                    </div>
+                    <div class="input-group">
+                        <label for="voteMargin">Typical close vote margin</label>
+                        <input type="number" id="voteMargin" value="8" min="1">
+                    </div>
+                </div>
+
+                <button class="calculate-btn" onclick="calculate()">Show Me The Gap</button>
+
+                <div id="results" class="results">
+                    <div class="result-item">
+                        <span class="result-label">At <span id="currentRateDisplay">5</span>%:</span>
+                        <span class="result-value" id="currentActions">500 actions</span>
+                        <span style="font-size: 14px; color: #6b7280; display: block; margin-top: 5px;">(baseline pressure)</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">At 45%:</span>
+                        <span class="result-value" id="speak4Actions">4,500 actions</span>
+                        <span style="font-size: 14px; color: #6b7280; display: block; margin-top: 5px;">(meaningful pressure)</span>
+                    </div>
+                    <div class="result-item" style="background: #fef2f2; padding: 20px; margin-top: 20px; border-radius: 8px; border: 2px solid #dc2626;">
+                        <span class="result-label" style="font-size: 18px;">You're leaving on the table:</span>
+                        <span class="result-value" style="font-size: 32px; color: #dc2626;" id="actionGap">4,000</span>
+                        <span style="font-size: 14px; color: #6b7280; display: block; margin-top: 10px;">constituent voices per campaign</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: What We're Good At -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">What Speak4 Actually Does</h2>
+            
+            <div style="max-width: 800px; margin: 0 auto 60px auto;">
+                <p style="font-size: 20px; text-align: center; color: #1f2937; line-height: 1.8;">
+                    We're not a platform. We're not trying to track legislation or manage your stakeholder relationships.
+                    We do one thing: turn constituent awareness into legislative action. Fast.
+                </p>
+            </div>
+
+            <div class="side-by-side">
+                <div class="side-card speak4">
+                    <h3 style="color: #001744;">What We're Great At</h3>
+                    <ul>
+                        <li>45% average conversion rate</li>
+                        <li>Mobile-first advocacy (70% mobile completion)</li>
+                        <li>10-minute campaign setup</li>
+                        <li>Storyteller mode (video testimonials)</li>
+                        <li>Message variants (testing included)</li>
+                        <li>Send+ (double impact in 48 hours)</li>
+                        <li>Meta Lead Forms integration</li>
+                        <li>Zero training required</li>
+                    </ul>
+                </div>
+
+                <div class="side-card quorum">
+                    <h3 style="color: #dc2626;">What Quorum's Great At (Use Them for This)</h3>
+                    <ul>
+                        <li>Legislative tracking (genuinely best-in-class)</li>
+                        <li>Bill monitoring and alerts</li>
+                        <li>Stakeholder relationship management</li>
+                        <li>Committee tracking</li>
+                        <li>Legislator contact database</li>
+                        <li>Vote history analysis</li>
+                        <li>Meeting scheduling with officials</li>
+                        <li>Regulatory tracking</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px; padding: 30px; background: white; border-radius: 12px;">
+                <p style="font-size: 24px; font-weight: 700; color: #001744; margin-bottom: 15px;">
+                    Here's the truth most platforms won't tell you:
+                </p>
+                <p style="font-size: 20px; color: #4b5563;">
+                    Best-in-class tools beat all-in-one mediocrity. Keep Quorum for tracking. Use Speak4 for advocacy.
+                    Your conversion rates will thank you.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Feature Comparison -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Head-to-Head Comparison</h2>
+            <p style="text-align: center; font-size: 18px; margin-bottom: 40px; color: #6b7280;">
+                What you actually get from each platform
+            </p>
+
+            <div style="overflow-x: auto;">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th style="text-align: center;">Quorum</th>
+                            <th style="text-align: center;">Speak4</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-top: 2px solid #e5e7eb;">
+                            <td><strong>Advocacy Conversion Rate</strong></td>
+                            <td>5-8% average</td>
+                            <td class="check">41-45% average</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mobile Experience</strong></td>
+                            <td>Desktop-first</td>
+                            <td class="check">Mobile-first (70% mobile)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Campaign Setup Time</strong></td>
+                            <td>Hours to days</td>
+                            <td class="check">10 minutes</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Training Required</strong></td>
+                            <td>Yes (complex CRM)</td>
+                            <td class="check">None</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Message Variants</strong></td>
+                            <td>Limited</td>
+                            <td class="check">Unlimited testing</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Storyteller Mode</strong></td>
+                            <td>❌</td>
+                            <td class="check">✓ Video testimonials</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Send+</strong></td>
+                            <td>❌</td>
+                            <td class="check">✓ Double impact</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Meta Lead Forms</strong></td>
+                            <td>❌</td>
+                            <td class="check">✓ Native integration</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Advocacy R&D Focus</strong></td>
+                            <td>~15% of platform budget</td>
+                            <td class="check">100% of company</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Last Major Advocacy Update</strong></td>
+                            <td>Check their blog</td>
+                            <td class="check">Continuous</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Setup Time</strong></td>
+                            <td>Days (CRM config)</td>
+                            <td class="check">10 minutes</td>
+                        </tr>
+                        <tr style="border-top: 2px solid #e5e7eb;">
+                            <td><strong>Legislative Tracking</strong></td>
+                            <td class="stars">⭐⭐⭐⭐⭐ Best in class</td>
+                            <td>Use Quorum!</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Stakeholder CRM</strong></td>
+                            <td class="stars">⭐⭐⭐⭐⭐ Excellent</td>
+                            <td>Use Quorum!</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Advocacy Results</strong></td>
+                            <td>⭐⭐ Adequate</td>
+                            <td class="stars">⭐⭐⭐⭐⭐ Specialized</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="text-align: center; margin-top: 30px; padding: 20px; background: #e6fdf8; border-radius: 8px;">
+                <p style="font-size: 20px; font-weight: 600; color: #001744;">💡 We're not competing with Quorum. We're replacing the one module they're not good at.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Testimonials -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">What Partners Say</h2>
+            <div class="testimonial-carousel">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <div class="testimonial">
+                        <div class="testimonial-quote">
+                            "75% of Speak4 partners say ease of use is our top selling point."
+                        </div>
+                        <div class="testimonial-author">NANA</div>
+                        <div class="testimonial-org">Platform Communications</div>
+                        <div class="testimonial-category">Ease of Use</div>
+                    </div>
+
+                    <div class="testimonial">
+                        <div class="testimonial-quote">
+                            "Speak4 is a great tool for digital advocacy. The system is easy & intuitive to navigate on both the setup side and the advocate side. The customization options are also really great - I like the ability to generate several variations of messages and use video testimonials."
+                        </div>
+                        <div class="testimonial-author">Besjana Ajazi</div>
+                        <div class="testimonial-org">Advocacy Architects</div>
+                        <div class="testimonial-category">Intuitive Platform, Message Variants, StoryTeller Mode</div>
+                    </div>
+
+                    <div class="testimonial">
+                        <div class="testimonial-quote">
+                            "The nature of working during a legislative session is that things can change extremely fast, and our campaigns need to be adjusted very quickly. When I have a problem, I need action right away – I can't wait 48 hours."
+                        </div>
+                        <div class="testimonial-author">Taylor Dawson Justice</div>
+                        <div class="testimonial-org">Beacon Center of Tennessee</div>
+                        <div class="testimonial-category">Speed</div>
+                    </div>
+
+                    <div class="testimonial">
+                        <div class="testimonial-quote">
+                            "I've worked in nonprofit think tanks my whole career, so I'm careful with money and donor dollars. I saw how tools like Speak4's Facebook Lead Form integration could help us spend our money more efficiently."
+                        </div>
+                        <div class="testimonial-author">Taylor Dawson Justice</div>
+                        <div class="testimonial-org">Beacon Center of Tennessee</div>
+                        <div class="testimonial-category">Meta Lead Forms</div>
+                    </div>
+
+                    <div class="testimonial">
+                        <div class="testimonial-quote">
+                            "What I like most is that the platform dashboard and back end are so intuitive. Nothing is complicated. A lot of what we do with our data is downloading everything and putting it into MailChimp, and your integrations made that easier than any other software I've worked with."
+                        </div>
+                        <div class="testimonial-author">Taylor Dawson Justice</div>
+                        <div class="testimonial-org">Beacon Center of Tennessee</div>
+                        <div class="testimonial-category">Integrations, Ease of Use</div>
+                    </div>
+
+                    <div class="testimonial">
+                        <div class="testimonial-quote">
+                            "An underrated feature you have — one that a lot of other platforms don't — is that the moment someone fills out the form, it shows up in the analytics dashboard. When I test something, I'm not waiting two hours for it to appear; it's there right away. That means I can test and deploy faster, which is so important to me."
+                        </div>
+                        <div class="testimonial-author">Taylor Dawson Justice</div>
+                        <div class="testimonial-org">Beacon Center of Tennessee</div>
+                        <div class="testimonial-category">Reporting</div>
+                    </div>
+                </div>
+
+                <div class="carousel-controls">
+                    <button class="carousel-btn" onclick="moveCarousel(-1)">‹</button>
+                    <div class="carousel-dots">
+                        <button class="carousel-dot active" onclick="goToSlide(0)"></button>
+                        <button class="carousel-dot" onclick="goToSlide(1)"></button>
+                        <button class="carousel-dot" onclick="goToSlide(2)"></button>
+                        <button class="carousel-dot" onclick="goToSlide(3)"></button>
+                        <button class="carousel-dot" onclick="goToSlide(4)"></button>
+                        <button class="carousel-dot" onclick="goToSlide(5)"></button>
+                    </div>
+                    <button class="carousel-btn" onclick="moveCarousel(1)">›</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Best of Both Worlds -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Use the Right Tool for Each Job</h2>
+            <p style="text-align: center; font-size: 20px; margin-bottom: 40px;">Many organizations use specialized tools for different needs.</p>
+            
+            <div class="venn-container">
+                <div class="venn-circle venn-quorum">
+                    <h3 style="color: #dc2626;">Legislative Tracking Platforms<br>(Like Quorum)</h3>
+                    <ul>
+                        <li>Legislative Tracking</li>
+                        <li>Stakeholder CRM</li>
+                        <li>Committee Monitoring</li>
+                        <li>Vote History</li>
+                    </ul>
+                </div>
+
+                <div class="venn-circle venn-speak4">
+                    <h3 style="color: #059669;">Advocacy Specialists<br>(Like Speak4)</h3>
+                    <ul>
+                        <li>Advocacy Campaigns</li>
+                        <li>45% Conversion</li>
+                        <li>Mobile-First</li>
+                        <li>Fast Campaign Setup</li>
+                        <li>Constituent Engagement</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                <p style="font-size: 18px; font-weight: 600; margin-bottom: 15px;">Specialized tools deliver better results in their area of focus.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 8: Next Steps -->
+    <section id="demo" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Three Paths Forward</h2>
+            <div class="cta-grid">
+                <div class="cta-card">
+                    <h3>See It Yourself</h3>
+                    <ul>
+                        <li>Side-by-side campaign comparison</li>
+                        <li>Actual conversion data from switchers</li>
+                        <li>Mobile experience difference</li>
+                        <li>Setup speed comparison</li>
+                    </ul>
+                    <a href="https://speak4.co/demo" class="btn-primary">Schedule 15-Minute Demo</a>
+                </div>
+
+                <div class="cta-card">
+                    <h3>Talk to a Switcher</h3>
+                    <ul>
+                        <li>Speak with organizations who switched</li>
+                        <li>Still use Quorum for tracking/CRM</li>
+                        <li>Can share honest pros/cons</li>
+                        <li>Real users, real experiences</li>
+                    </ul>
+                    <a href="https://speak4.co/customers" class="btn-primary">Connect with References</a>
+                </div>
+
+                <div class="cta-card">
+                    <h3>Calculate Your Gap</h3>
+                    <ul>
+                        <li>What you're currently generating</li>
+                        <li>What specialist tools would deliver</li>
+                        <li>The action gap in your campaigns</li>
+                        <li>Then decide if integration is worth it</li>
+                    </ul>
+                    <a href="#calculator" class="btn-primary">Run the Numbers</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="https://speak4.co">Home</a>
+                    <a href="https://speak4.co/blog">Blog</a>
+                    <a href="https://www.quorum.us/blog/quorum-grassroots-vs-speak4/">Read Quorum's Article</a>
+                    <a href="https://speak4.co/demo">Schedule Demo</a>
+                    <a href="https://speak4.co/contact">Contact</a>
+                </div>
+
+                <p style="margin-top: 30px; font-size: 18px; font-weight: 600;">
+                    Best-in-class tools beat all-in-one mediocrity.
+                </p>
+
+                <div class="footer-disclaimer">
+                    This page contains comparative statements about Quorum Analytics' products based on publicly available information including their website, blog posts, and customer testimonials. Speak4 believes all statements to be accurate. We respect Quorum's trademark rights and use their name solely for factual comparison. Quorum Analytics is a respected competitor whose legislative tracking and stakeholder management tools are genuinely best-in-class—we recommend them for those purposes.
+                </div>
+
+                <p style="margin-top: 30px; color: #9ca3af;">
+                    © 2025 Speak4. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 6;
+
+        function moveCarousel(direction) {
+            currentSlide += direction;
+            if (currentSlide < 0) currentSlide = totalSlides - 1;
+            if (currentSlide >= totalSlides) currentSlide = 0;
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            const track = document.getElementById('testimonialTrack');
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update dots
+            document.querySelectorAll('.carousel-dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        // Auto-advance carousel every 8 seconds
+        setInterval(() => {
+            moveCarousel(1);
+        }, 8000);
+
+        function calculate() {
+            const listSize = parseInt(document.getElementById('listSize').value) || 10000;
+            const currentRate = parseInt(document.getElementById('currentRate').value) || 5;
+            const voteMargin = parseInt(document.getElementById('voteMargin').value) || 8;
+
+            const currentActions = Math.round(listSize * (currentRate / 100));
+            const speak4Actions = Math.round(listSize * 0.45);
+            const gap = speak4Actions - currentActions;
+
+            document.getElementById('currentActions').textContent = currentActions.toLocaleString() + ' actions';
+            document.getElementById('speak4Actions').textContent = speak4Actions.toLocaleString() + ' actions';
+            document.getElementById('actionGap').textContent = gap.toLocaleString();
+            document.getElementById('currentRateDisplay').textContent = currentRate;
+
+            document.getElementById('results').classList.add('show');
+
+            // Smooth scroll to results
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
