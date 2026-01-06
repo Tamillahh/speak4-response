@@ -58,7 +58,7 @@
         /* Hero Section */
         .hero {
             background: white;
-            padding: 80px 0 60px 0;
+            padding: 80px 0 40px 0;
         }
 
         .hero h1 {
@@ -442,6 +442,10 @@
                 grid-template-columns: 1fr !important;
             }
 
+            .hero div[style*="display: flex"] {
+                flex-direction: column !important;
+            }
+
             .two-column,
             .calculator-inputs,
             .features-grid {
@@ -455,6 +459,13 @@
             .accordion-header h3 {
                 font-size: 16px;
             }
+        }
+
+        /* CTA Button Hover Effects */
+        a[href="#calculator"]:hover,
+        a[href="#contact"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
     </style>
 </head>
@@ -497,6 +508,15 @@
             <p style="font-size: 20px; margin-top: 50px; color: #1f2937; font-weight: 600;">
                 If you want your grassroots campaigns to succeed in 2026, it's time to take a good, hard look at your tech.
             </p>
+
+            <div style="display: flex; gap: 20px; justify-content: center; margin-top: 40px;">
+                <a href="#calculator" style="background: #00f6b3; color: #001744; padding: 16px 32px; border-radius: 8px; font-size: 18px; font-weight: 600; text-decoration: none; transition: all 0.3s;">
+                    Calculate Your Potential
+                </a>
+                <a href="#contact" style="background: #001744; color: #00f6b3; padding: 16px 32px; border-radius: 8px; font-size: 18px; font-weight: 600; text-decoration: none; transition: all 0.3s;">
+                    Get Started
+                </a>
+            </div>
         </div>
     </section>
 
@@ -583,11 +603,11 @@
                         </div>
                     </div>
 
-                    <div style="background: #fef2f2; padding: 30px; margin-top: 30px; border-radius: 8px; border: 3px solid #dc2626; text-align: center;">
+                    <div style="background: #fef2f2; padding: 30px 30px 40px 30px; margin-top: 30px; border-radius: 8px; border: 3px solid #dc2626; text-align: center;">
                         <div style="font-size: 20px; color: #dc2626; margin-bottom: 15px; font-weight: 600;">
                             Potential additional advocates with <span style="color: #001744; font-weight: 700;">Speak4</span>:
                         </div>
-                        <div style="font-size: 56px; font-weight: 700; color: #dc2626; margin: 20px 0;" id="actionGap">800</div>
+                        <div style="font-size: 56px; font-weight: 700; color: #dc2626; margin: 20px 0 0 0;" id="actionGap">800</div>
                     </div>
                 </div>
             </div>
@@ -652,7 +672,7 @@
     </section>
 
     <!-- Contact Form Section -->
-    <section class="section section-alt">
+    <section id="contact" class="section section-alt">
         <div class="container">
             <h2 class="section-title">Ready to get started?</h2>
 
