@@ -83,6 +83,12 @@
             margin: 20px 0;
             font-style: italic;
             color: #991b1b;
+            transition: all 0.3s ease;
+        }
+
+        .quote-box:hover {
+            transform: translateX(5px);
+            box-shadow: -4px 4px 12px rgba(220, 38, 38, 0.15);
         }
 
         .quote-attribution {
@@ -119,6 +125,15 @@
             grid-template-columns: 1fr 1fr;
             gap: 60px;
             margin-top: 40px;
+        }
+
+        .two-column > div {
+            transition: all 0.3s ease;
+        }
+
+        .two-column > div:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         .problem-list, .solution-list {
@@ -201,11 +216,35 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calculate-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(0, 246, 179, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .calculate-btn:hover::before {
+            width: 300px;
+            height: 300px;
         }
 
         .calculate-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0,23,68,0.2);
+        }
+
+        .calculate-btn:active {
+            transform: translateY(0);
         }
 
         .results {
@@ -219,9 +258,17 @@
             transition: all 0.5s ease-in-out;
         }
 
+        .results > div > div {
+            transition: all 0.3s ease;
+        }
+
+        .results > div > div:hover {
+            transform: scale(1.02);
+        }
+
         .results.show {
             opacity: 1;
-            max-height: 800px;
+            max-height: 600px;
         }
 
         .result-item {
@@ -253,6 +300,13 @@
             padding: 30px;
             margin: 30px 0;
             border-radius: 8px;
+            min-height: 180px;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 246, 179, 0.2);
         }
 
         .testimonial-quote {
@@ -271,6 +325,42 @@
             color: #6b7280;
         }
 
+        .testimonial-carousel {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 0 10px;
+        }
+
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #d1d5db;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .carousel-dot.active {
+            background: #00f6b3;
+            transform: scale(1.3);
+        }
+
         /* Features Section */
         .features-grid {
             display: grid;
@@ -282,6 +372,15 @@
         .feature-card {
             text-align: center;
             padding: 30px;
+            background: white;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
         }
 
         .feature-card h3 {
@@ -349,11 +448,35 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(0, 23, 68, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .submit-btn:hover::before {
+            width: 300px;
+            height: 300px;
         }
 
         .submit-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0,246,179,0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
         }
 
         /* FAQ Accordion */
@@ -456,6 +579,14 @@
                 grid-template-columns: 1fr !important;
             }
 
+            .section div[style*="grid-template-columns: repeat(3, 1fr)"] {
+                grid-template-columns: 1fr !important;
+            }
+
+            .results div[style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+            }
+
             .accordion-header h3 {
                 font-size: 16px;
             }
@@ -467,6 +598,12 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
+
+        /* Direct Mail Card Hover */
+        .section div[style*="grid-template-columns: repeat(3, 1fr)"] > div:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+        }
     </style>
 </head>
 <body>
@@ -475,13 +612,8 @@
         <div class="container">
             <div class="header-content">
                 <a href="https://speak4.co">
-  <img
-    src="/speak4-response/Quorum-Speak4/Images/speak4logo.png"
-    alt="Speak4"
-    class="logo-img"
-  >
-</a>
-
+                    <img src="speak4logo.png" alt="Speak4" class="logo-img">
+                </a>
             </div>
         </div>
     </header>
@@ -519,7 +651,7 @@
                     Calculate Your Potential
                 </a>
                 <a href="#contact" style="background: #001744; color: #00f6b3; padding: 16px 32px; border-radius: 8px; font-size: 18px; font-weight: 600; text-decoration: none; transition: all 0.3s;">
-                    Get Started
+                    Book Demo
                 </a>
             </div>
         </div>
@@ -528,6 +660,8 @@
     <!-- Problem/Solution Section -->
     <section class="section section-alt">
         <div class="container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 60px;">Is Your Platform Holding You Back?</h2>
+            
             <div class="two-column">
                 <div style="background: #fef2f2; padding: 40px; border-radius: 12px; border-left: 4px solid #dc2626;">
                     <h2 style="font-size: 28px; color: #dc2626; margin-bottom: 30px; font-weight: 700;">If your current platform has:</h2>
@@ -539,7 +673,6 @@
                         <li>No heads up on major changes</li>
                         <li>Manual reporting every week</li>
                         <li>Surprise price increases at renewal</li>
-                        <li>Inadequate communication</li>
                     </ul>
                 </div>
 
@@ -547,9 +680,9 @@
                     <h2 style="font-size: 28px; color: #059669; margin-bottom: 30px; font-weight: 700;">You need:</h2>
                     <ul class="solution-list">
                         <li>Integrations that actually work</li>
-                        <li>Our team is fast</li>
+                        <li>Same-day (or sooner) support</li>
                         <li>Sophisticated, conversion-boosting AI features</li>
-                        <li>Get up and running in under 10 minutes</li>
+                        <li>Intuitive features that get you up and running in under 10 minutes</li>
                         <li>Airtight deliverability with custom targeting</li>
                         <li>Transparent, predictable pricing</li>
                         <li>Real-time reporting dashboard</li>
@@ -561,7 +694,7 @@
     </section>
 
     <!-- Calculator Section -->
-    <section class="section">
+    <section id="calculator" class="section">
         <div class="container">
             <h2 class="section-title">What Your Conversions Could Look Like</h2>
 
@@ -580,39 +713,44 @@
                 <button class="calculate-btn" onclick="calculate()">Calculate</button>
 
                 <div id="results" class="results">
-                    <div style="background: white; padding: 25px; border-radius: 8px; margin-bottom: 40px;">
-                        <h3 style="font-size: 20px; margin-bottom: 20px; color: #001744;">Your Current Results:</h3>
-                        <div class="result-item" style="border: none;">
-                            <span class="result-label">Email list:</span>
-                            <span class="result-value" id="displayListSize">10,000</span>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px;">
+                        <!-- Current Results -->
+                        <div style="background: #fef2f2; padding: 30px; border-radius: 12px; border: 3px solid #dc2626;">
+                            <h3 style="font-size: 18px; margin-bottom: 20px; color: #dc2626; font-weight: 700; text-align: center;">Your Current Results</h3>
+                            <div style="display: flex; flex-direction: column; gap: 15px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="color: #4b5563; font-size: 14px;">Email list:</span>
+                                    <span style="font-size: 20px; font-weight: 700; color: #001744;" id="displayListSize">---</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="color: #4b5563; font-size: 14px;">Conversion rate:</span>
+                                    <span style="font-size: 24px; font-weight: 700; color: #dc2626;"><span id="currentRateDisplay">-</span>%</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="color: #4b5563; font-size: 14px;">Advocates:</span>
+                                    <span style="font-size: 28px; font-weight: 700; color: #dc2626;" id="currentActions">---</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="result-item" style="border: none;">
-                            <span class="result-label">Current conversion rate:</span>
-                            <span class="result-value"><span id="currentRateDisplay">5</span>%</span>
-                        </div>
-                        <div class="result-item" style="border: none;">
-                            <span class="result-label">Current advocates:</span>
-                            <span class="result-value" id="currentActions">500</span>
-                        </div>
-                    </div>
 
-                    <div style="background: white; padding: 25px; border-radius: 8px;">
-                        <h3 style="font-size: 20px; margin-bottom: 20px; color: #001744;">With <span style="color: #001744; font-weight: 700;">Speak4</span> AI Message Smoothing:</h3>
-                        <div class="result-item" style="border: none;">
-                            <span class="result-label">Projected conversion rate:</span>
-                            <span class="result-value"><span id="aiRateDisplay">13</span>%</span>
+                        <!-- Speak4 Results -->
+                        <div style="background: #f0fdf4; padding: 30px; border-radius: 12px; border: 3px solid #00f6b3;">
+                            <h3 style="font-size: 18px; margin-bottom: 20px; color: #059669; font-weight: 700; text-align: center;">With <span style="color: #001744;">Speak4</span> AI</h3>
+                            <div style="display: flex; flex-direction: column; gap: 15px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="color: #4b5563; font-size: 14px;">Email list:</span>
+                                    <span style="font-size: 20px; font-weight: 700; color: #001744;" id="displayListSize2">---</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="color: #4b5563; font-size: 14px;">Conversion rate:</span>
+                                    <span style="font-size: 24px; font-weight: 700; color: #059669;"><span id="aiRateDisplay">-</span>%</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="color: #4b5563; font-size: 14px;">Advocates:</span>
+                                    <span style="font-size: 28px; font-weight: 700; color: #059669;" id="speak4Actions">---</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="result-item" style="border: none;">
-                            <span class="result-label">Projected advocates:</span>
-                            <span class="result-value" id="speak4Actions">1,300</span>
-                        </div>
-                    </div>
-
-                    <div style="background: #fef2f2; padding: 30px 30px 40px 30px; margin-top: 30px; border-radius: 8px; border: 3px solid #dc2626; text-align: center;">
-                        <div style="font-size: 20px; color: #dc2626; margin-bottom: 15px; font-weight: 600;">
-                            Potential additional advocates with <span style="color: #001744; font-weight: 700;">Speak4</span>:
-                        </div>
-                        <div style="font-size: 56px; font-weight: 700; color: #dc2626; margin: 20px 0 0 0;" id="actionGap">800</div>
                     </div>
                 </div>
             </div>
@@ -624,29 +762,43 @@
         <div class="container">
             <h2 class="section-title">From teams who switched:</h2>
 
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
-                <div class="testimonial">
-                    <div class="testimonial-quote">
-                        "[Happy Speak4 quote about results]"
+            <div class="testimonial-carousel">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <div class="testimonial-slide">
+                        <div class="testimonial">
+                            <div class="testimonial-quote">
+                                "[Happy Speak4 quote about results]"
+                            </div>
+                            <div class="testimonial-author">Real Speak4 Partner</div>
+                            <div class="testimonial-org">Organization Name</div>
+                        </div>
                     </div>
-                    <div class="testimonial-author">Real Speak4 Partner</div>
-                    <div class="testimonial-org">Organization Name</div>
+
+                    <div class="testimonial-slide">
+                        <div class="testimonial">
+                            <div class="testimonial-quote">
+                                "[Happy Speak4 quote about ease of use]"
+                            </div>
+                            <div class="testimonial-author">Real Speak4 Partner</div>
+                            <div class="testimonial-org">Organization Name</div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-slide">
+                        <div class="testimonial">
+                            <div class="testimonial-quote">
+                                "[Happy Speak4 quote about support]"
+                            </div>
+                            <div class="testimonial-author">Real Speak4 Partner</div>
+                            <div class="testimonial-org">Organization Name</div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="testimonial">
-                    <div class="testimonial-quote">
-                        "[Happy Speak4 quote about ease of use]"
-                    </div>
-                    <div class="testimonial-author">Real Speak4 Partner</div>
-                    <div class="testimonial-org">Organization Name</div>
-                </div>
-
-                <div class="testimonial">
-                    <div class="testimonial-quote">
-                        "[Happy Speak4 quote about support]"
-                    </div>
-                    <div class="testimonial-author">Real Speak4 Partner</div>
-                    <div class="testimonial-org">Organization Name</div>
+                <div class="carousel-nav">
+                    <div class="carousel-dot active" onclick="goToTestimonial(0)"></div>
+                    <div class="carousel-dot" onclick="goToTestimonial(1)"></div>
+                    <div class="carousel-dot" onclick="goToTestimonial(2)"></div>
                 </div>
             </div>
         </div>
@@ -669,8 +821,8 @@
                 </div>
 
                 <div class="feature-card">
-                    <h3>Fast Support When It Matters</h3>
-                    <p>Our Partner Success team responds in minutes, not days. Get proactive Strategy Sessions, one-on-one support, and immediate help when bills are moving – whether it's 8am on a Monday or 8pm on a Friday. When advocacy moves fast, so do we.</p>
+                    <h3>Speedy Support</h3>
+                    <p>We're here and ready to respond when you need us – whether it's 8am on a Monday or 8pm on a Friday. But we don't wait until an issue arises to reach out: our Partner Success team offers proactive Strategy Sessions and one-on-one support to help your campaign thrive.</p>
                 </div>
             </div>
         </div>
@@ -694,6 +846,56 @@
 
                 <button type="submit" class="submit-btn">Schedule a Demo</button>
             </form>
+        </div>
+    </section>
+
+    <!-- Direct Mail Kit Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 20px;">Ready to Break Free?</h2>
+            <p style="text-align: center; font-size: 20px; color: #6b7280; max-width: 700px; margin: 0 auto 60px auto;">
+                We make switching easy with our Clean Break Migration Kit
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 50px;">
+                <div style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center; transition: all 0.3s;">
+                    <div style="font-size: 48px; margin-bottom: 20px;">🎁</div>
+                    <h3 style="font-size: 24px; color: #001744; margin-bottom: 15px; font-weight: 700;">Treat Yourself</h3>
+                    <p style="color: #6b7280; line-height: 1.6;">
+                        You've dealt with unreliable service long enough. Celebrate your decision to upgrade with a sweet treat on us.
+                    </p>
+                </div>
+
+                <div style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center; transition: all 0.3s;">
+                    <div style="font-size: 48px; margin-bottom: 20px;">💔</div>
+                    <h3 style="font-size: 24px; color: #001744; margin-bottom: 15px; font-weight: 700;">Break Up Card</h3>
+                    <p style="color: #6b7280; line-height: 1.6;">
+                        <strong>Any of this sound familiar?</strong><br>
+                        • Broken integrations<br>
+                        • Unresponsive service<br>
+                        • 48 hour lag
+                    </p>
+                    <p style="color: #6b7280; margin-top: 15px;">It's not you, it's them.</p>
+                </div>
+
+                <div style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center; transition: all 0.3s;">
+                    <div style="font-size: 48px; margin-bottom: 20px;">🎟️</div>
+                    <h3 style="font-size: 24px; color: #001744; margin-bottom: 15px; font-weight: 700;">Clean Break Migration Voucher</h3>
+                    <p style="color: #6b7280; line-height: 1.6;">
+                        When you move, Clean Bankruptcy Headaches. Tickets are Provided Early. <strong>Service Credit Enclosed.</strong>
+                    </p>
+                </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #00f6b3 0%, #059669 100%); padding: 50px; border-radius: 16px; text-align: center; box-shadow: 0 8px 20px rgba(0, 246, 179, 0.3);">
+                <h3 style="font-size: 32px; color: white; margin-bottom: 20px; font-weight: 700;">Want Your Own Break Up Kit?</h3>
+                <p style="font-size: 20px; color: white; margin-bottom: 30px; opacity: 0.95;">
+                    Reach out and we'll send you everything you need to make a clean break from your old platform.
+                </p>
+                <a href="#contact" style="display: inline-block; background: white; color: #001744; padding: 18px 40px; border-radius: 8px; font-size: 20px; font-weight: 700; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);">
+                    Request Your Kit
+                </a>
+            </div>
         </div>
     </section>
 
@@ -853,6 +1055,28 @@
     </footer>
 
     <script>
+        // Testimonial Carousel
+        let currentTestimonial = 0;
+        const totalTestimonials = 3;
+
+        function goToTestimonial(index) {
+            currentTestimonial = index;
+            const track = document.getElementById('testimonialTrack');
+            track.style.transform = `translateX(-${index * 100}%)`;
+            
+            // Update dots
+            document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+
+        // Auto-advance carousel every 6 seconds
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
+            goToTestimonial(currentTestimonial);
+        }, 6000);
+
+        // Calculator
         function calculate() {
             const listSize = parseInt(document.getElementById('listSize').value) || 10000;
             const currentRate = parseInt(document.getElementById('currentRate').value) || 5;
@@ -860,19 +1084,20 @@
             const currentActions = Math.round(listSize * (currentRate / 100));
             const aiRate = currentRate + 8; // Add 8 percentage points
             const speak4Actions = Math.round(listSize * (aiRate / 100));
-            const gap = speak4Actions - currentActions;
 
+            // Update all display elements
             document.getElementById('displayListSize').textContent = listSize.toLocaleString();
+            document.getElementById('displayListSize2').textContent = listSize.toLocaleString();
             document.getElementById('currentRateDisplay').textContent = currentRate;
             document.getElementById('currentActions').textContent = currentActions.toLocaleString();
             document.getElementById('aiRateDisplay').textContent = aiRate;
             document.getElementById('speak4Actions').textContent = speak4Actions.toLocaleString();
-            document.getElementById('actionGap').textContent = gap.toLocaleString();
 
             document.getElementById('results').classList.add('show');
             document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
+        // Accordion
         function toggleAccordion(header) {
             const item = header.parentElement;
             const content = item.querySelector('.accordion-content');
@@ -901,6 +1126,7 @@
                 }
             });
         });
+
     </script>
 </body>
 </html>
